@@ -1,0 +1,24 @@
+DATALOADER:
+  TRAIN_X:
+    BATCH_SIZE: 64
+    SAMPLER: "RandomDomainSampler" # to m3sda
+
+  TRAIN_U:
+    SAME_AS_X: False
+    SAMPLER: "SeqDomainSampler"
+    BATCH_SIZE: 64
+  
+  TEST:
+    BATCH_SIZE: 64 
+  # to do mixmatch
+  K_TRANSFORMS : 3 
+
+OPTIM:
+  NAME: "sgd"
+  LR: 0.002
+  MAX_EPOCH: 2000
+  LR_SCHEDULER: "cosine"
+  
+TRAINER:
+  FIXMATCH:
+    STRONG_TRANSFORMS: ["random_flip", "randaugment_fixmatch", "cutout", "normalize"]

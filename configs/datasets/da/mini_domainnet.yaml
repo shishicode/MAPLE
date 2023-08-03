@@ -1,0 +1,12 @@
+INPUT:
+  SIZE: (96, 96)
+  TRANSFORMS: ["random_flip", "random_translation", "normalize"]
+
+DATASET:
+  NAME: "miniDomainNet"
+  NUM_LABELED: 20 # class number
+  VAL_PERCENT: 0.
+
+MODEL:
+  BACKBONE:
+    NAME: "resnet18"
